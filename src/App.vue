@@ -8,6 +8,15 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'App',
+  created() {
+    this.$bus.loadHistory = []
+  }
+}
+</script>
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
