@@ -29,14 +29,14 @@ export default {
     }, 5000)
   },
   methods: {
-    getGithubApiData() {
+    async getGithubApiData() {
       let startTime = new Date()
       let history = {
         startTime: moment().format('MMMM Do YYYY, h:mm:ss a')
       }
       this.githubApi = []
 
-      axios.get('https://api.github.com')
+      await axios.get('https://api.github.com')
         .then((res) => {
           this.githubApi = this.handleGithubApiData(res.data)
           history.status = 'success'
